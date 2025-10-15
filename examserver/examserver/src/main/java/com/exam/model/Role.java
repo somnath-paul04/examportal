@@ -16,7 +16,7 @@ public class Role {
 	
 	@Id
 	private Long roleId;
-	private Long roleName;
+	private String roleName;
 	
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY,mappedBy = "role")
 	private Set<UserRole> userRoles=new HashSet<>();
@@ -27,7 +27,7 @@ public class Role {
 	}
 
 
-	public Role(Long roleId, Long roleName) {
+	public Role(Long roleId, String roleName) {
 		super();
 		this.roleId = roleId;
 		this.roleName = roleName;
@@ -44,12 +44,12 @@ public class Role {
 	}
 
 
-	public Long getRoleName() {
+	public String getRoleName() {
 		return roleName;
 	}
 
 
-	public void setRoleName(Long roleName) {
+	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
 
