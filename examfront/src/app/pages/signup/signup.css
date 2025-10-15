@@ -1,0 +1,12 @@
+.full-width{
+    width: 100%;
+}
+.register-btn {
+  background-color: #4CAF50; 
+  color: white;
+}
+.clear-btn {
+  background-color: #f44336; 
+  color: white;
+  margin-left: 20px;
+}
