@@ -1,4 +1,4 @@
-.full-width{
+/* .full-width{
     width: 100%;
 }
 .register-btn {
@@ -9,4 +9,145 @@
   background-color: #f44336; 
   color: white;
   margin-left: 20px;
+} */
+
+/* ======================================================= */
+/* 1. ANIMATED BACKGROUND & GLOBAL PAGE SETUP (ADD TO GLOBAL styles.css) */
+/* ======================================================= */
+
+/* Ensure the HTML and Body cover the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Apply the animated gradient to the body or main application element */
+body {
+    /* Subtle, flowing gradient (Light blues and purples) */
+    background: linear-gradient(135deg, #e0f2f7, #e3e9fb, #f0e6fa);
+    background-size: 400% 400%; 
+    animation: gradientShift 15s ease infinite; 
+    font-family: 'Arial', sans-serif;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; 
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ======================================================= */
+/* 2. REGISTRATION CARD STYLING (THE FLOATING WHITE BOX) */
+/* (Place the rest in your component's .css/.scss file) */
+/* ======================================================= */
+
+/* Targeting the Bootstrap column that holds the form content */
+.col-md-6 {
+    /* Floating Card Style */
+    background-color: #ffffff; 
+    padding: 40px;
+    border-radius: 12px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    transition: transform 0.3s ease-in-out;
+    margin-top: 50px !important; 
+    margin-bottom: 50px !important;
+    position: relative; 
+    z-index: 10; 
+}
+
+.col-md-6:hover {
+    transform: translateY(-3px); /* Noticeable lift on hover */
+}
+
+/* ======================================================= */
+/* 3. HEADINGS, LOGO & YOUR EXISTING CLASS INTEGRATION */
+/* ======================================================= */
+
+h1.text-center {
+    color: #333333; 
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+/* Your existing class: Ensure Angular Material fields take full width */
+.full-width {
+    width: 100%;
+    margin-bottom: 10px; 
+}
+
+/* ======================================================= */
+/* 4. ANGULAR MATERIAL INPUT OVERRIDES (CRITICAL FOR LOOK) */
+/* ======================================================= */
+
+/* Use ::ng-deep to override Material's scope (or use a dedicated styles file) */
+/* Give the inputs a subtle, lighter fill */
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #f7f9fa; /* Very light background for contrast */
+    border-radius: 6px 6px 0 0;
+}
+
+/* Primary color for focus state (the underline and label) */
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple,
+::ng-deep .mat-focused .mat-form-field-label {
+    background-color: #007bff !important; 
+    color: #007bff !important; 
+}
+
+/* Style the hint text */
+.mat-hint {
+    color: #888888;
+}
+
+/* ======================================================= */
+/* 5. BUTTON STYLING (REDEFINING YOUR CLASSES) */
+/* ======================================================= */
+
+/* Your existing class redefined: Primary button (Register) */
+.register-btn {
+    /* Brand primary blue, replacing the green */
+    background-color: #007bff !important; 
+    color: white !important;
+    padding: 10px 30px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.1s;
+    min-width: 120px; 
+    margin-right: 15px; /* Consistent spacing */
+}
+
+.register-btn:hover {
+    background-color: #0056b3 !important; /* Darker blue on hover */
+}
+
+/* Your existing class redefined: Secondary button (Clear) */
+.clear-btn {
+    /* Clean outline style, replacing the red */
+    background-color: transparent !important;
+    color: #6c757d !important; /* Gray text color */
+    border: 1px solid #ced4da !important; /* Light gray border */
+    padding: 10px 30px !important;
+    border-radius: 6px !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 120px;
+    /* Keeping your existing margin-left, but adding !important for safety */
+    margin-left: 20px !important; 
+}
+
+.clear-btn:hover {
+    background-color: #f8f9fa !important; 
+    color: #495057 !important;
 }

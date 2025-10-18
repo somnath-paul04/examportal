@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Navbar } from "./components/navbar/navbar";
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -18,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   Navbar,
   MatInputModule,
   MatFormFieldModule,
+  MatSnackBarModule,
   ],
  
   templateUrl: './app.html',

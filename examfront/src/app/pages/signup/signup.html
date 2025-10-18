@@ -7,22 +7,26 @@
                 </div>
                 <h1 class="text-center">Register Here !!</h1>
 
-                {{user | json}}
+                <!-- {{user | json}} -->
 
                 <form (ngSubmit)="formSubmit()">
                     <!-- Username field -->
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Username</mat-label>
                         <input 
+                            required
                             [(ngModel)]="user.username" 
                             name="username"
                             matInput placeholder="Enter Here"
                         />
+                        <mat-hint>Username must be unique !!</mat-hint>
                     </mat-form-field>
+
                     <!-- Password field -->
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Password</mat-label>
                         <input 
+                        required
                         [(ngModel)]="user.password"
                         name="password"
                         type="password" matInput placeholder="Enter Here">
@@ -32,6 +36,7 @@
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>First Name</mat-label>
                         <input 
+                        required
                         [(ngModel)]="user.firstName"
                         name="firstName"
                         matInput placeholder="Enter Here">
@@ -41,6 +46,7 @@
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Last Name</mat-label>
                         <input 
+                        required
                         [(ngModel)]="user.lastName"
                         name="lastName"
                         matInput placeholder="Enter Here">
@@ -50,6 +56,7 @@
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Email Address</mat-label>
                         <input 
+                        required
                         [(ngModel)]="user.email"
                         name="email"
                         type="email" matInput placeholder="Enter Here">
@@ -59,6 +66,7 @@
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Phone Number</mat-label>
                         <input 
+                        required
                         [(ngModel)]="user.phone"
                         name="phone"
                         type="number" matInput placeholder="Enter Here">
