@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
-import { MatInputModule } from "@angular/material/input";
-import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-// import { JsonPipe } from '@angular/common';
 import { User } from '../../services/user';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { SharedMaterialImports } from '../../shared/shared-material';
 
 @Component({
   selector: 'app-signup',
-  // standalone:true,
-  imports: [MatInputModule,MatFormFieldModule,MatButtonModule,FormsModule],
+  standalone:true,
+  imports: [SharedMaterialImports],
   templateUrl: './signup.html',
   styleUrl: './signup.css'
 })

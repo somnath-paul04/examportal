@@ -1,13 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet,RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 import { Navbar } from "./components/navbar/navbar";
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-
-
 
 
 @Component({
@@ -15,11 +8,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   standalone:true,
   imports: [
   RouterOutlet,
-  MatButtonModule,
   Navbar,
-  MatInputModule,
-  MatFormFieldModule,
-  MatSnackBarModule,
+  
   ],
  
   templateUrl: './app.html',
