@@ -52,7 +52,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 			}
 
 		} else {
-			System.out.println("Invalid toke ,not start with bearer String");
+			System.out.println("Invalid token ,not starts with bearer String");
 		}
 
 		// Validated
