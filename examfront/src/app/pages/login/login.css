@@ -147,13 +147,7 @@ img {
 /* 6. SMALL UTILITY CLASSES */
 /* ======================================================= */
 
-.mt20 {
-  margin-top: 20px;
-}
 
-.ml10 {
-  margin-left: 10px;
-}
 mat-card {
   padding: 30px !important; /* add inner space */
   border-radius: 12px !important; /* optional, matches signup style */
