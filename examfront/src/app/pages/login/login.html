@@ -8,25 +8,27 @@
                 </div>
 
                 <h1 class="text-center">Login Here !!</h1>
-
-                <form>
+                {{loginData | json }}
+                <form (ngSubmit)="formSubmit()">
                     <!-- username field -->
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>User Name</mat-label>
                         <input 
                         required 
+                        [(ngModel)]="loginData.userName"
                         name="username" matInput 
                         placeholder="Enter Here" />
                         <mat-hint>Valid User Name</mat-hint>
                     </mat-form-field>
 
-                    <!-- passwprd field -->
+                    <!-- password field -->
 
                     <mat-form-field class="full-width" appearance="fill">
                         <mat-label>User Password</mat-label>
                         <input 
                         required 
-                        name="username" 
+                        [(ngModel)]="loginData.password"
+                        name="password" 
                         type="password"
                         matInput 
                         placeholder="Enter Here" />
