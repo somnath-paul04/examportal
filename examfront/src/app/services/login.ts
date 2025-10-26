@@ -6,9 +6,16 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class LoginService {
+  static isLogged: any;
   constructor(private http:HttpClient){
 
   }
+
+  //current user which is Loggedin
+  public getCurrentUser(){
+    return this.http.get(`${baseUrl}/current-user`);
+  }
+
   //generate token
   public generateToken(loginData:any){
     return this.http.post(`${baseUrl}/generate-token`,loginData);
@@ -53,14 +60,16 @@ export class LoginService {
     if(userStr!=null){
       return JSON.parse(userStr);
     }else{
-      this.logout();
+      // this.logout();
       return null;
     }
   }
-
-  //get user role
   public getUserRole(){
-    let user=this.getUser();
-    return user.authorities[0].authority;
+    let user = this.getUser();
+    // Check if user and user.authorities exist before trying to access them
+    if (user && user.authorities && user.authorities.length > 0) {
+      return user.authorities[0].authority;
+    }
+    return null; // Return null if no user or no role
   }
 }
