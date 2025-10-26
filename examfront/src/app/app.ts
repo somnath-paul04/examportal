@@ -3,6 +3,7 @@ import { RouterOutlet,RouterLink } from '@angular/router';
 import { Navbar } from "./components/navbar/navbar";
 
 
+
 @Component({
   selector: 'app-root',
   standalone:true,
@@ -13,7 +14,7 @@ import { Navbar } from "./components/navbar/navbar";
   ],
  
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('examfront');
