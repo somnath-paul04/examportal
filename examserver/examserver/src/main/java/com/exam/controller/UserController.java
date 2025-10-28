@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+// REMOVED: import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder; 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,17 +21,19 @@ import com.exam.service.UserService;
 
 @RestController
 @RequestMapping("/user")
-
 @CrossOrigin(origins = "*")
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+ 
+	
 	//Creating User
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception{
 		
 		user.setProfile("default.png");
+		
 		
 		Set<UserRole> roles= new HashSet<>();
 		
@@ -42,8 +45,6 @@ public class UserController {
 		userRole.setUser(user);
 		userRole.setRole(role);
 		roles.add(userRole);
-		
-		
 		
 		return this.userService.createUser(user, roles);
 		
