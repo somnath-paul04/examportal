@@ -148,11 +148,11 @@ img {
 /* ======================================================= */
 
 
-mat-card {
-  padding: 30px !important; /* add inner space */
-  border-radius: 12px !important; /* optional, matches signup style */
+/* mat-card {
+  padding: 30px !important; 
+  border-radius: 12px !important; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
-}
+} */
 
 /* add spacing between form fields and logo */
 .container.text-center {
