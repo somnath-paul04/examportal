@@ -97,7 +97,7 @@ export class Signup {
       (error) => {
         //error
         console.log(error);
-        this.snack.open('Something went wrong !!', '', { duration: 3000 })
+        this.snack.open('User already exists with this details !!', '', { duration: 3000 })
       }
     );
 
