@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.exam.helper.UserFoundException;
 import com.exam.model.Role;
 import com.exam.model.User;
 import com.exam.model.UserRole;
@@ -29,6 +30,7 @@ public class ExamserverApplication implements CommandLineRunner{
 	}
 	@Override
 	public void run(String... args) throws Exception{
+		try {
 		System.out.println("starting code"); 
 	
 		
@@ -54,6 +56,10 @@ public class ExamserverApplication implements CommandLineRunner{
 		
 		User user1=this.userService.createUser(user, userRoleSet);
 		System.out.println(user1.getUsername());
+		}catch(UserFoundException e) {
+			e.printStackTrace();
+			
+		}
 
 	}
 
