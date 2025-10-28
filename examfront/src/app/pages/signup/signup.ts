@@ -85,8 +85,7 @@ export class Signup {
       this.snack.open('Phone Number must be exactly 10 digits !!', '', { duration: 3000 });
       return;
     }
-    // --- END: Specific Update for Phone Number ---
-
+    
     // If all frontend validation passes, proceed to backend service
     this.userService.addUser(this.user).subscribe(
       (data: any) => {
@@ -97,7 +96,7 @@ export class Signup {
       (error) => {
         //error
         console.log(error);
-        this.snack.open('User already exists with this details !!', '', { duration: 3000 })
+        this.snack.open('User already exists with these details !!', '', { duration: 3000 })
       }
     );
 
