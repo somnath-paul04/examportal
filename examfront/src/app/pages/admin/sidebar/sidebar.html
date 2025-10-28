@@ -1,0 +1,24 @@
+<mat-card class="menu-card">
+    
+    <mat-nav-list>
+
+        <div mat-subheader>Menu</div>
+        
+        <a mat-list-item 
+           routerLink="/admin" 
+           routerLinkActive="active-list-item" 
+           [routerLinkActiveOptions]="{exact: true}">
+            <mat-icon matListItemIcon>home</mat-icon>
+            Home
+        </a>
+
+        <a mat-list-item 
+           routerLink="/admin/profile" 
+           routerLinkActive="active-list-item">
+            <mat-icon matListItemIcon>account_circle</mat-icon>
+            Profile
+        </a>
+        
+    </mat-nav-list>
+
+</mat-card>
