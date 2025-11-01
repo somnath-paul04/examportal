@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedMaterialImports } from '../../shared/shared-material';
 import { LoginService } from '../../services/login';
-import { JsonPipe } from '@angular/common';
+import { NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-profile',
-  imports: [SharedMaterialImports,JsonPipe],
+  imports: [SharedMaterialImports, NgIf],
   templateUrl: './profile.html',
   styleUrl: './profile.css'
 })
