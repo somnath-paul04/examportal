@@ -13,13 +13,12 @@
   <a *ngIf="!login.isLoggedIn()" [routerLink]="'/signup'" mat-flat-button class="register-btn" aria-label="Register">
     Register
   </a>
-
-  <a *ngIf="login.isLoggedIn()"  [routerLink]="'/admin/profile'" mat-flat-button class="register-btn" aria-label="Register">
-    {{login.getUser().username}}
-  </a>
-
-  <a (click)="logout()" *ngIf="login.isLoggedIn()" mat-flat-button class="register-btn ml20" aria-label="Register">
+  <a (click)="logout()" *ngIf="login.isLoggedIn()" mat-flat-button class="register-btn " aria-label="Register">
     Logout
+  </a>
+  
+  <a *ngIf="login.isLoggedIn()"  [routerLink]="'/admin/profile'" mat-flat-button class="register-btn ml20" aria-label="Register">
+    {{login.getUser().username}}
   </a>
 
 </mat-toolbar>
