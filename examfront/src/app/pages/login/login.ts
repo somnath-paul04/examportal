@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { SharedMaterialImports } from '../../shared/shared-material';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { JsonPipe } from '@angular/common';
+// import { JsonPipe } from '@angular/common';
 import { LoginService } from '../../services/login';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone:true,
-  imports: [SharedMaterialImports, JsonPipe],
+  imports: [SharedMaterialImports],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })

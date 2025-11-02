@@ -7,9 +7,7 @@ import baseUrl from './helper';
 })
 export class LoginService {
   static isLogged: any;
-  constructor(private http:HttpClient){
-
-  }
+  constructor(private http:HttpClient){} 
 
   //current user which is Loggedin
   public getCurrentUser(){

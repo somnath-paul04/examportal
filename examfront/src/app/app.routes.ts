@@ -8,6 +8,8 @@ import { adminGuard } from './services/admin-guard';
 import { normalGuard } from './services/normal-guard';
 import { Profile } from './pages/profile/profile';
 import { Welcome } from './pages/admin/welcome/welcome';
+import { ViewCategories } from './pages/admin/view-categories/view-categories';
+import { AddCategory } from './pages/admin/add-category/add-category';
 
 export const routes: Routes = [
     {
@@ -36,6 +38,14 @@ export const routes: Routes = [
             {
                 path:'profile',
                 component:Profile
+            },
+            {
+                path:'categories',
+                component:ViewCategories
+            },
+            {
+                path:'add-category',
+                component:AddCategory
             },
         ]
     },

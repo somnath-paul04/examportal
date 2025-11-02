@@ -1,0 +1,42 @@
+<mat-card class="m-4 shadow-lg rounded-xl transition-shadow duration-300 hover:shadow-2xl">
+    <mat-list>
+        <h1 class="ml20">All Categories</h1>
+
+        <!-- The @for loop is fixed to track by $index to avoid the "Duplicate Key" error -->
+        @for (c of categories; track $index; let isLast = $last) {
+            <mat-list-item class="py-2 hover:bg-gray-50 transition duration-150 rounded-md">
+                
+                <!-- Icon -->
+                <mat-icon matListItemIcon class="text-blue-500">category</mat-icon>
+                
+                <!-- Title -->
+                <div matListItemTitle class="font-semibold text-lg text-gray-800">{{c.title}}</div>
+                
+                <!-- Description -->
+                <div matListItemLine class="text-sm text-gray-500 mt-0.5">{{c.description}}</div>
+                
+            </mat-list-item>
+            
+            <!-- Divider, wrapped in @if block to prevent the Angular error -->
+            @if (!isLast) {
+                <mat-divider class="my-1"></mat-divider>
+            }
+        } 
+        
+        <!-- Empty Block for when the categories array is empty -->
+        @empty {
+             <div class="p-6 text-center text-gray-500 italic bg-gray-50 rounded-lg border border-dashed border-gray-300">
+                No categories are currently defined.
+            </div>
+        }
+        
+    </mat-list>
+    
+    <!-- Button Container -->
+    <div class="container text-center p-4 mb10">
+        <button routerLink="/admin/add-category" mat-raised-button color="accent" class="w-full md:w-auto">
+            <mat-icon>add_circle</mat-icon>
+            Add New Category
+        </button>
+    </div>
+</mat-card>

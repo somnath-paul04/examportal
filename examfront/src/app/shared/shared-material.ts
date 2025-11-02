@@ -9,6 +9,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import { MatActionList } from "@angular/material/list";
+import {MatDividerModule} from '@angular/material/divider';
+
 
 export const SharedMaterialImports=[
     MatInputModule,
@@ -21,5 +23,6 @@ export const SharedMaterialImports=[
     MatIconModule,
     RouterModule,
     MatListModule,
-    MatActionList
+    MatActionList,
+    MatDividerModule
 ];

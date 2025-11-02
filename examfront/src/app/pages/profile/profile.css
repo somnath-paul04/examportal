@@ -17,5 +17,5 @@
 }
 mat-card-actions.text-center {
     display: flex;
-    justify-content: center; /* This is what centers the buttons */
+    justify-content: center;
 }
