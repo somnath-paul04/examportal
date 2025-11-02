@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import { MatActionList } from "@angular/material/list";
 import {MatDividerModule} from '@angular/material/divider';
+import { MatCardActions } from "@angular/material/card";
 
 
 export const SharedMaterialImports=[
@@ -24,5 +25,6 @@ export const SharedMaterialImports=[
     RouterModule,
     MatListModule,
     MatActionList,
-    MatDividerModule
+    MatDividerModule,
+    MatCardActions
 ];

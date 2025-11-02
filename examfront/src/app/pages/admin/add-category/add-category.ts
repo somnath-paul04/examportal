@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AddCategory {
 
-  category = {
+  category = { 
     title: '',
     description: '',
   };
@@ -28,7 +28,7 @@ export class AddCategory {
         duration: 3000,
       });
       return;
-    }
+    }  
 
     this._category.addcategory(this.category).subscribe(
       (data:any)=>{

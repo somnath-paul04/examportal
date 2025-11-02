@@ -10,6 +10,7 @@ import { Profile } from './pages/profile/profile';
 import { Welcome } from './pages/admin/welcome/welcome';
 import { ViewCategories } from './pages/admin/view-categories/view-categories';
 import { AddCategory } from './pages/admin/add-category/add-category';
+import { ViewQuizzes } from './pages/admin/view-quizzes/view-quizzes';
 
 export const routes: Routes = [
     {
@@ -46,6 +47,10 @@ export const routes: Routes = [
             {
                 path:'add-category',
                 component:AddCategory
+            },
+            {
+                path:'quizzes',
+                component:ViewQuizzes,
             },
         ]
     },
