@@ -11,7 +11,8 @@ import {MatListModule} from '@angular/material/list';
 import { MatActionList } from "@angular/material/list";
 import {MatDividerModule} from '@angular/material/divider';
 import { MatCardActions } from "@angular/material/card";
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 export const SharedMaterialImports=[
     MatInputModule,
@@ -26,5 +27,7 @@ export const SharedMaterialImports=[
     MatListModule,
     MatActionList,
     MatDividerModule,
-    MatCardActions
+    MatCardActions,
+    MatSlideToggleModule,
+    MatSelectModule
 ];
