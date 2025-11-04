@@ -24,7 +24,7 @@ export class AddCategory {
 
   formSubmit(form: NgForm) {
     if (this.category.title.trim() == '' || this.category.title == null) {
-      this._snack.open('Title required !!', '', {
+      this._snack.open('Title required !!', 'close', {
         duration: 3000,
       });
       return;
