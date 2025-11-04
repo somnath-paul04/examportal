@@ -10,7 +10,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-quiz',
   standalone: true,
-  imports: [SharedMaterialImports, JsonPipe, FormsModule, CommonModule],
+  imports: [SharedMaterialImports, FormsModule, CommonModule],
   templateUrl: './add-quiz.html',
   styleUrl: './add-quiz.css',
 })
@@ -52,6 +52,18 @@ export class AddQuiz implements OnInit {
   addQuiz(): void {
     if (this.quizData.title.trim() == '' || this.quizData.title == null) {
       this._snack.open('Title required !!', 'Close', { duration: 3000 });
+      return;
+    }
+    if (this.quizData.description.trim() == '' || this.quizData.description == null) {
+      this._snack.open('Description required !!', 'Close', { duration: 3000 });
+      return;
+    }
+    if (this.quizData.maxMarks.trim() == '' || this.quizData.maxMarks == null) {
+      this._snack.open('Maximum marks required !!', 'Close', { duration: 3000 });
+      return;
+    }
+    if (this.quizData.numberOfQuestions.trim() == '' || this.quizData.numberOfQuestions == null) {
+      this._snack.open('No. of questions required !!', 'Close', { duration: 3000 });
       return;
     }
     

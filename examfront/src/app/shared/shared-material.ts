@@ -13,6 +13,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MatCardActions } from "@angular/material/card";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 export const SharedMaterialImports=[
     MatInputModule,
@@ -29,5 +30,5 @@ export const SharedMaterialImports=[
     MatDividerModule,
     MatCardActions,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,MatProgressSpinnerModule
 ];

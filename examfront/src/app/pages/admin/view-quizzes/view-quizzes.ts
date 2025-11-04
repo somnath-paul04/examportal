@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class ViewQuizzes implements OnInit {
+[x: string]: any;
 
   quizzes: any[] = [];
 

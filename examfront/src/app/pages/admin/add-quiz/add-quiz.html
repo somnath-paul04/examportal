@@ -13,7 +13,7 @@
                     <!-- description field -->
                     <mat-form-field class="w100" appearance="fill">
                         <mat-label>Enter Description</mat-label>
-                        <textarea [(ngModel)]="quizData.description" name="description" placeholder="Enter here" matInput rows="5"></textarea>
+                        <textarea [(ngModel)]="quizData.description" name="description" placeholder="Enter here" matInput rows="5" required></textarea>
                     </mat-form-field>
 
                     <div class="row">
@@ -21,7 +21,7 @@
                             <!-- max marks -->
                             <mat-form-field class="w100" appearance="fill">
                                 <mat-label>Maximum Marks</mat-label>
-                                <input [(ngModel)]="quizData.maxMarks" type="text" name="maxMarks" placeholder="Enter here" matInput/>
+                                <input [(ngModel)]="quizData.maxMarks" type="text" name="maxMarks" placeholder="e.g., 100" matInput required/>
                             </mat-form-field>
 
 
@@ -30,8 +30,8 @@
                             <!-- no of questions to be displayed -->
                             <mat-form-field class="w100" appearance="fill">
                                 <mat-label>Number of questions</mat-label>
-                                <input [(ngModel)]="quizData.numberOfQuestions" type="text" name="numberOfQuestions" placeholder="Enter here"
-                                    matInput/>
+                                <input [(ngModel)]="quizData.numberOfQuestions" type="text" name="numberOfQuestions" placeholder="e.g., 10"
+                                    matInput required/>
                             </mat-form-field>
 
                         </div>
@@ -45,7 +45,7 @@
                     <!--category select  -->
                     <mat-form-field class="mt20 w100">
                         <mat-label>Categories</mat-label>
-                        <mat-select name="category" [(ngModel)]="quizData.category">
+                        <mat-select name="category" [(ngModel)]="quizData.category" required>
                             @for (c of categories; track c) {
                             <mat-option [value]="c">{{c.title}}</mat-option>
                             }
