@@ -8,9 +8,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
-import { MatActionList } from "@angular/material/list";
+// import { MatActionList } from "@angular/material/list"; <-- Removed: Covered by MatListModule
 import {MatDividerModule} from '@angular/material/divider';
-import { MatCardActions } from "@angular/material/card";
+// import { MatCardActions } from "@angular/material/card"; <-- Removed: Covered by MatCardModule
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -26,9 +26,10 @@ export const SharedMaterialImports=[
     MatIconModule,
     RouterModule,
     MatListModule,
-    MatActionList,
+    // MatActionList, // Removed to fix conflict
     MatDividerModule,
-    MatCardActions,
+    // MatCardActions, // Removed to fix conflict
     MatSlideToggleModule,
-    MatSelectModule,MatProgressSpinnerModule
+    MatSelectModule,
+    MatProgressSpinnerModule
 ];

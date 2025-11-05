@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-sidebar-user',
   standalone:true,
-  imports: [SharedMaterialImports, JsonPipe, RouterLink, RouterLinkActive], 
+  imports: [SharedMaterialImports, RouterLink, RouterLinkActive], 
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })

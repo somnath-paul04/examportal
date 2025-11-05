@@ -1,0 +1,39 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <h1>Available Quizzes</h1>
+        @if (quizzes) {
+            <div class="row mt20">
+                
+                @for (q of quizzes; track q.title) {
+                    <div class="col-md-4">
+                        
+                        <mat-card class="mb20">
+                            <mat-card-header>
+                                <div mat-card-avatar class="example-header-image"></div>
+                                <mat-card-title>
+                                    {{q.title}}
+                                </mat-card-title>
+
+                                <mat-card-subtitle>
+                                    {{q.category.title}}
+                                </mat-card-subtitle>
+
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p class="truncate">{{q.description}}</p>
+                            </mat-card-content>
+
+                           <mat-card-actions>
+                            <button mat-stroked-button color="primary">View</button>
+                            <button mat-stroked-button color="accent" class="ml10">Start</button>
+                            <button mat-button color="accent">Questions :{{q.numberOfQuestions}}</button>
+                            <button mat-button color="accent">M.M :{{q.maxMarks}}</button>
+                           </mat-card-actions>
+                        </mat-card>
+
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
