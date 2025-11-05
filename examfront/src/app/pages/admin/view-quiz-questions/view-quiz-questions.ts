@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from '../../../services/question';
 import { CommonModule } from '@angular/common';
 import { SharedMaterialImports } from '../../../shared/shared-material';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-quiz-questions',
@@ -37,16 +38,13 @@ export class ViewQuizQuestions implements OnInit {
     this._question.getQuestionsOfQuiz(this.qId).subscribe({
       next: (data: any) => {
         
-        // Helper function to normalize the string for reliable comparison (trims whitespace and handles case)
         const normalize = (value: string | null): string => {
           if (!value) return '';
           return String(value).trim().toLowerCase();
         };
 
-        // CRITICAL FIX: Apply normalization (TRIM and LOWERCASE) to all comparison fields
         this.questions = data.map((q: any) => {
           
-          // These new properties are used for reliable comparison in the HTML template
           q.normalizedAnswer = normalize(q.answer);
           q.normalizedOption1 = normalize(q.option1);
           q.normalizedOption2 = normalize(q.option2);
@@ -56,12 +54,50 @@ export class ViewQuizQuestions implements OnInit {
           return q;
         });
 
-        // CRITICAL FIX: Manually force UI update after data is processed
         this.cdr.detectChanges(); 
       },
       error: (e) => {
         console.error('Error loading questions:', e);
+        Swal.fire('Connection Error', 'Could not load questions from server.', 'error');
       }
     });
+  }
+
+  deleteQuestion(qId: number | string){
+    Swal.fire({
+        icon: 'info',
+        title: 'Are you sure?',
+        confirmButtonText: 'Delete',
+        showCancelButton: true,
+      }).then((result) => {
+  
+        if (result.isConfirmed) {
+          
+          const previousQuestions = [...this.questions]; 
+          
+          const initialLength = this.questions.length;
+          this.questions = this.questions.filter((question) => question.quesId != qId); 
+          
+          if (this.questions.length < initialLength) {
+             this.cdr.detectChanges(); 
+          }
+  
+          this._question.deleteQuestion(qId).subscribe(
+            {
+              next: (data) => {
+                Swal.fire('Success', 'Question deleted successfully!', 'success');
+              },
+              error: (error) => {
+                this.questions = previousQuestions; 
+                this.cdr.detectChanges(); 
+    
+                Swal.fire('Error', 'Could not delete question due to server error. Question restored.', 'error');
+                
+                console.error('Deletion failed:', error);
+              }
+            }
+          );
+        }
+      });
   }
 }
