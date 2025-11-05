@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { SharedMaterialImports } from '../../../shared/shared-material';
 import { QuizService } from '../../../services/quiz';
-import { MatSnackBar } from '@angular/material/snack-bar'; // Keeping in case you add snackbar logic
-import Swal from 'sweetalert2'; // Keeping in case you add update logic
+import { MatSnackBar } from '@angular/material/snack-bar'; 
+import Swal from 'sweetalert2'; 
 import { JsonPipe, CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms'; 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,15 +11,14 @@ import baseUrl from '../../../services/helper';
 
 @Component({
   selector: 'app-update-quiz',
-  standalone: true, // Assuming this is needed based on your other components
-  imports: [SharedMaterialImports, FormsModule, CommonModule, JsonPipe], // Added JsonPipe back for completeness
+  standalone: true, 
+  imports: [SharedMaterialImports, FormsModule, CommonModule], 
   templateUrl: './update-quiz.html',
   styleUrl: './update-quiz.css'
 })
-export class UpdateQuiz implements OnInit, AfterViewInit { // Added AfterViewInit
+export class UpdateQuiz implements OnInit, AfterViewInit { 
 
   qId: number = 0;
-  // FIX 1: Initialize quiz with a structure so *ngIf="quiz" is true immediately
   quiz: any = {
     title: '',
     description: '',
@@ -43,19 +42,17 @@ export class UpdateQuiz implements OnInit, AfterViewInit { // Added AfterViewIni
   ) { }
 
   ngOnInit(): void {
-    // 1. Get Quiz ID from Route
+
     const qIdParam = this._route.snapshot.params['qId'];
     this.qId = qIdParam ? parseInt(qIdParam, 10) : 0;
-    
-    // 2. Load Quiz Data and Categories
+
     this.loadQuiz(this.qId);
     this.loadCategories();
   }
 
-  // FIX 2: Implement ngAfterViewInit to force Mat-Form-Fields to render correctly
+
   ngAfterViewInit(): void {
-    // This brief timeout allows the form content to be injected before forcing 
-    // Material to calculate the layout, fixing the initial visual glitch.
+
     setTimeout(() => {
       this.cdr.detectChanges();
     }, 100);
@@ -64,7 +61,7 @@ export class UpdateQuiz implements OnInit, AfterViewInit { // Added AfterViewIni
   loadQuiz(quizId: number): void {
     this._quiz.getQuiz(quizId).subscribe(
       (data: any) => {
-        // When data arrives, it overwrites the initial empty 'quiz' object
+       
         this.quiz = data;
         console.log(this.quiz);
       },

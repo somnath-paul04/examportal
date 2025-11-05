@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { SharedMaterialImports } from '../../../shared/shared-material';
 import { CategoryService } from '../../../services/category';
 import Swal from 'sweetalert2';
@@ -17,7 +17,8 @@ export class ViewCategories implements OnInit {
   
   isLoading: boolean = true; 
 
-  constructor(private _category: CategoryService) {}
+  // Inject ChangeDetectorRef
+  constructor(private _category: CategoryService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.fetchCategories(); 
@@ -29,6 +30,10 @@ export class ViewCategories implements OnInit {
       (data: any) => {
         this.categories = data;
         this.isLoading = false;
+        
+        // CRITICAL FIX: Manually trigger change detection
+        this.cdr.detectChanges(); 
+        
         console.log('Categories fetched successfully:', this.categories);
       },
       (error) => {

@@ -1,0 +1,78 @@
+<div class="p-4 md:p-8">
+    <mat-card class="mb-6 shadow-xl bg-gradient-to-r from-indigo-50 to-white">
+        <mat-card-header class="pb-2">
+            <mat-icon mat-card-avatar class="text-indigo-600">visibility</mat-icon>
+            <mat-card-title class="text-2xl font-bold text-indigo-800">
+                Questions for: {{ qTitle }}
+            </mat-card-title>
+            <mat-card-subtitle class="text-sm text-gray-600 mt-1">
+                Administrative view of all quiz questions.
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="pt-2">
+            <h2 class="text-xl font-medium text-gray-700">Total Questions: {{ questions.length }}</h2>
+
+            <div class="container text-center mt10">
+                <button mat-raised-button color="primary" class="text-lg py-3 px-6 shadow-xl hover:shadow-2xl transition duration-300" [routerLink]="'/admin/add-question/'+qId+'/'+qTitle">
+                    <mat-icon>add_circle</mat-icon>
+                    Add New Question
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <div *ngIf="questions.length === 0" class="text-center p-10 text-gray-500 bg-white shadow-lg rounded-xl">
+        <mat-icon class="text-4xl mt20">info</mat-icon>
+        <p class="mt-2 text-lg">No questions found for this quiz.</p>
+    </div>
+
+    @for (q of questions; track q.quesId) {
+        <mat-card class="question-card mb-6 shadow-lg border-t-4 border-indigo-400">
+            <mat-card-header>
+                <mat-card-title class="text-xl font-semibold text-gray-800 mb10">
+                    Q{{ $index + 1 }}. <span [innerHTML]="q.content"></span>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="grid gap-4 grid-cols-1 md:grid-cols-2 mb20">
+                    
+                    <div class="option-box" 
+                         [class.is-correct]="q.normalizedAnswer === q.normalizedOption1">
+                        <p class="font-medium text-gray-900">1: <span [innerHTML]="q.option1"></span></p>
+                    </div>
+
+                    <div class="option-box" 
+                         [class.is-correct]="q.normalizedAnswer === q.normalizedOption2">
+                        <p class="font-medium text-gray-900">2: <span [innerHTML]="q.option2"></span></p>
+                    </div>
+                    
+                    <div class="option-box" 
+                         [class.is-correct]="q.normalizedAnswer === q.normalizedOption3">
+                        <p class="font-medium text-gray-900">3: <span [innerHTML]="q.option3"></span></p>
+                    </div>
+
+                    <div class="option-box" 
+                         [class.is-correct]="q.normalizedAnswer === q.normalizedOption4">
+                        <p class="font-medium text-gray-900">4: <span [innerHTML]="q.option4"></span></p>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3 border-t border-gray-200 bg-green-50 rounded-b-lg correct-answer-display">
+                    <p class="font-bold text-green-700">Correct Answer: 
+                        <span class="font-normal" [innerHTML]="q.answer"></span>
+                    </p>
+                </div>
+            </mat-card-content>
+            
+            <mat-card-actions align="end" class="border-t pt-3">
+                <button mat-stroked-button color="accent" class="mr10">
+                    <mat-icon>edit</mat-icon> Update
+                </button>
+                <button mat-raised-button color="warn">
+                    <mat-icon>delete</mat-icon> Delete
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    }
+</div>

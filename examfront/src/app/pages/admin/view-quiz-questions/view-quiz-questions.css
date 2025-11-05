@@ -1,0 +1,59 @@
+/* * Styles for ViewQuizQuestions component 
+ * Enhances appearance and highlights the correct answer for the Admin.
+ */
+
+/* General Card and Layout Styling */
+.p-4 {
+    padding: 1rem;
+}
+
+.md\:p-8 {
+    padding: 2rem;
+}
+
+/* Question Card Styling */
+.question-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Option Box Styling */
+.option-box {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.2s;
+}
+
+/* Highlight for the Correct Answer (using .is-correct class from HTML binding) */
+.option-box.is-correct {
+    border-color: #4CAF50 !important; /* Green border */
+    background-color: #E8F5E9 !important; /* Light green background */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Subtle green shadow */
+}
+
+/* Responsive Grid Adjustments */
+.grid {
+    display: grid;
+    gap: 1rem; /* gap-4 */
+    grid-template-columns: 1fr; /* Single column for mobile */
+}
+
+@media (min-width: 768px) {
+    .grid {
+        /* Two columns for desktop/tablet (md:grid-cols-2) */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Correct Answer Display Box at the bottom of the card */
+.correct-answer-display {
+    /* Ensures the green box is distinct */
+    border-radius: 0 0 8px 8px; 
+}
