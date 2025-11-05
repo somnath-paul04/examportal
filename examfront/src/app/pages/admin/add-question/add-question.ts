@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SharedMaterialImports } from '../../../shared/shared-material';
-import { JsonPipe} from '@angular/common';
 import Swal from 'sweetalert2';
 import { QuestionService } from '../../../services/question';
 // Import NgForm to type the form parameter
@@ -10,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-question',
   standalone: true,
-  imports: [SharedMaterialImports, JsonPipe],
+  imports: [SharedMaterialImports],
   templateUrl: './add-question.html',
   styleUrl: './add-question.css'
 })
