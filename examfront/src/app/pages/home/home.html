@@ -1,21 +1,52 @@
-<div class="home-background">
-    <div class="bootstrap-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center">
-                    <!-- New container for the book and typing effect -->
-                    <div class="title-container">
-                        <!-- Book Icon with 3D animation -->
-                        <span class="book-icon">📚</span>
-                        <!-- Title text wrapped for typing animation -->
-                        <h1 class="typing-h1">
-                            <span class="typing-text">Welcome to Examportal</span>
-                        </h1>
-                    </div>
-                    <!-- This button is now styled by the CSS targeting it -->
-                    <button matButton="tonal">Home Page</button>
-                </div>
+<!-- New Style: Full-width, Hero Section with Gradient Background -->
+
+<div class="hero-section">
+<div class="container py-5">
+<div class="row align-items-center">
+
+        <!-- Left Column: Content and CTAs -->
+        <div class="col-lg-6 col-md-12 content-block">
+            
+            <p class="pre-title">START YOUR LEARNING JOURNEY</p>
+            
+            <h1 class="main-title">
+                Master Any Exam with <span class="highlight-text">{{ titleText }}</span>
+            </h1>
+            
+            <p class="sub-text">
+                Prepare, practice, and track your progress across diverse categories like **Programming, GK, and Aptitude**. Get instant results and detailed insights.
+            </p>
+
+            <!-- CTA Buttons: Two clear paths for the user -->
+            <div class="cta-group">
+                <!-- Main CTA (Primary action) - Assuming MatButtonModule and RouterLink are in SharedMaterialImports -->
+                <button mat-raised-button 
+                        color="primary"
+                        routerLink="/categories"
+                        class="main-cta-button">
+                    <mat-icon>school</mat-icon> EXPLORE QUIZZES
+                </button>
+                
+                <!-- Secondary CTA (If user needs to register) -->
+                <button mat-flat-button 
+                        color="accent" 
+                        routerLink="/signup"
+                        class="secondary-cta-button">
+                    Register Now
+                </button>
             </div>
         </div>
+
+        <!-- Right Column: Illustration/Visualization (Hidden on small screens) -->
+        <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+            <!-- Placeholder for the Illustration. Adjust the URL or replace with your local asset. -->
+            <img src="https://placehold.co/550x400/9333ea/ffffff?text=EXAMPORTAL" 
+                 alt="Student learning visualization" 
+                 class="hero-illustration-new">
+        </div>
+
     </div>
+</div>
+
+
 </div>

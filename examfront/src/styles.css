@@ -1,41 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-html, body { height: 100%; background: #f0f4ff; }
+/* IMPORTANT: Removed 'background: #f0f4ff;' from this line so home.css can control the background */
+html, body { height: 100%; } 
 body { 
-    margin: 0; 
-    padding-top: 90px;
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+ 	margin: 0; 
+ 	padding-top: 90px;
+ 	font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 
 
 .text-center{
-    text-align: center;
+ 	text-align: center;
 }
 /* Corrected utility classes to use the proper margin property */
 .ml20{
-    margin-left: 20px !important;
+ 	margin-left: 20px !important;
 }
 .mr20{
-    margin-right: 20px !important;
+ 	margin-right: 20px !important;
 }
 .mt20{
-    margin-top: 20px !important;
+ 	margin-top: 20px !important;
 }
 .mb20{
-    margin-bottom: 20px !important;
+ 	margin-bottom: 20px !important;
 }
 .ml10{
-    margin-left: 10px !important;
+ 	margin-left: 10px !important;
 }
 .mr10{
-    margin-right: 10px !important;
+ 	margin-right: 10px !important;
 }
 .mt10{
-    margin-top: 10px !important;
+ 	margin-top: 10px !important;
 }
 .mb10{
-    margin-bottom: 10px !important;
+ 	margin-bottom: 10px !important;
 }
 
 html, body { height: 100%; }
